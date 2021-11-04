@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('welcome');
+    return view('dashboard');
 })->name('dashboard');
 
 Route::get('/image-gallery',[\App\Http\Controllers\ImageGalleryController::class, 'index'])->name('image-gallery');
