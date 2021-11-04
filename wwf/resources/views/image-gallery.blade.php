@@ -9,13 +9,6 @@
             <section class="mt-6 grid md:grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-8" >
             @if($images->count())
                 @foreach($images as $image)
-{{--                    <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>--}}
-{{--                        <a class="img-thumbnail" rel="ligthbox" href="/images/{{ $image->image }}">--}}
-{{--                            <img class="h-28 w-28 object-cover object-center rounded-full" alt="" src="/images/{{ $image->image }}" />--}}
-{{--                            <div class='text-center'>--}}
-{{--                                <small class='text-muted'>{{ $image->title }}</small>--}}
-{{--                            </div> <!-- text-center / end -->--}}
-{{--                        </a>--}}
 
                 <article class="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200">
                     <div class="relative w-full h-80 md:h-64 lg:h-44">
@@ -38,10 +31,9 @@
 
 
             @endforeach
+
             @endif
             </section>
 </article>
 </section>
-
-    <livewire:photo-upload />
 @endsection

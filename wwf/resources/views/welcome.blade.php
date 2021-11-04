@@ -242,6 +242,6 @@
 <div class="container shadow-lg mx-auto bg-white mt-24 md:mt-16 ">
 @yield('content')
 </div>
-
+@livewireScripts
 </body>
 </html>

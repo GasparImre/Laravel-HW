@@ -14,19 +14,19 @@ class PhotoUpload extends Component
     public $name;
     public $fileNames = [];
 
-    public function save()
+    public function submit()
     {
         $this->validate([
             'photo' => 'image|max:12288',
         ]);
         $name = $this->photo->getClientOriginalName();
-        dd($this->photo);
-        $this->photo->storePubliclyAs('images', $name);
+        $this->photo->storePubliclyAs('public/photos', $name);
+        session()->flash('message', __('Photo uploaded '));
     }
 
     public function mount()
     {
-        $path = public_path('/images');
+        $path = public_path('/storage/photos');
         $files = File::allFiles($path);
         foreach($files as $file) {
             $mimeType=mime_content_type($file->getRealPath())??'application/octet-stream';
@@ -36,8 +36,6 @@ class PhotoUpload extends Component
             }
         }
     }
-
-
     public function render()
     {
         return view('livewire.photo-upload');
