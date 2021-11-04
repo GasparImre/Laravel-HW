@@ -181,7 +181,7 @@
   transition duration-150 ease-in-out origin-top min-w-32"
         >
 
-            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Photos</li>
+            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('photoupload')}}" >Photos</a></li>
             <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</li>
 
 

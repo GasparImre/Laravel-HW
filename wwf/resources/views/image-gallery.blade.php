@@ -42,4 +42,6 @@
             </section>
 </article>
 </section>
+
+    <livewire:photo-upload />
 @endsection
