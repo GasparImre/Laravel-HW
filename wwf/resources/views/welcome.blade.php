@@ -128,7 +128,7 @@
             <li class="toggleable hover:bg-blue-800 hover:text-white">
                 <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
                 <label for="toggle-one" class="block cursor-pointer py-6 px-4 lg:p-6 text-sm lg:text-base font-bold">Menu</label>
-                <div role="toggle" class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
+                <div role="toggle" class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-600">
                     <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
                         <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
                             <h3 class="font-bold text-xl text-white text-bold mb-2">Galery</h3>
