@@ -21,6 +21,7 @@
         "tailwindcss": "^2.2.2"
     },
     "dependencies": {
-        "bootstrap": "^5.1.2"
+        "bootstrap": "^5.1.2",
+        "livewire": "^0.6.1"
     }
 }
