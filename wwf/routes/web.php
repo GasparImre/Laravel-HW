@@ -24,8 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/image-gallery',[\App\Http\Controllers\ImageGalleryController::class, 'index'])->name('image-gallery');
 Route::post('/image-gallery',[\App\Http\Controllers\ImageGalleryController::class, 'upload'])->name('image-upload');
 Route::delete('/image-gallery/{id}',[\App\Http\Controllers\ImageGalleryController::class, 'destroy'])->name('image-destroy');
-Route::get('/photoupload', function (){
-    return view('photoupload');
-});
 
+Route::get('/contactus',[\App\Http\Controllers\ContactUsController::class,'create'])->name('contactus');
+Route::post('/contactus',[\App\Http\Controllers\ContactUsController::class, 'store']);
 Route::get('/videos',[\App\Http\Controllers\Controller::class, 'play'])->name('play');
