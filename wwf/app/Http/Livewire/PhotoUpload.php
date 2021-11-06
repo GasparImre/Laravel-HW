@@ -20,8 +20,10 @@ class PhotoUpload extends Component
             'photo' => 'image|max:12288',
         ]);
         $name = $this->photo->getClientOriginalName();
-        $this->photo->storePubliclyAs('public/photos', $name);
-        session()->flash('message', __('Photo uploaded '));
+//        $this->photo->storePubliclyAs('photos', $name);
+        $this->photo->store('photos');
+        dd($this->name);
+//        session()->flash('message', __('Photo uploaded '));
     }
 
     public function mount()
