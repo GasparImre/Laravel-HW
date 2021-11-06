@@ -19,10 +19,11 @@ class ContactUsController extends Controller
 
         ]);
 
-        DB::table('contact')->insert([
+        DB::table('contact_table')->insert([
             'fullname'=>$request->fullname,
             'email'=>$request->email,
             'message'=>$request->message,
         ]);
+        return view('feedback');
     }
 }
