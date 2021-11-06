@@ -33,7 +33,21 @@
             @endforeach
 
             @endif
+
             </section>
 </article>
 </section>
+    @if(Route::has('login'))
+        @auth
+            <livewire:photo-upload />
+        @else
+            <section class="mt-6 grid md:grid-cols-1 lg:grid-cols-4 gap-x-6 gap-y-8" >
+                <article class="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200">
+                    <div class="relative w-full h-80 md:h-64 lg:h-44">
+                        <p class="mt-4 text-gray-600">Please log in to upload photos</p>
+                    </div>
+                </article>
+            </section>
+        @endauth
+    @endif
 @endsection
