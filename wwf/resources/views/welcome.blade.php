@@ -85,6 +85,7 @@
     <meta name="author" content="name">
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
+    @livewireStyles
 </head>
 
 <body class="bg-gray-200 font-sans leading-normal tracking-normal">
@@ -143,7 +144,7 @@
                         <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
                             <h3 class="font-bold text-xl text-white text-bold mb-2">About</h3>
                             <li>
-                                <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Contact us</a>
+                                <a href="{{route('contactus')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Contact us</a>
                             </li>
                             <li>
                                 <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">About us</a>
