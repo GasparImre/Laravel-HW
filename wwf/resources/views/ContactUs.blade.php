@@ -5,6 +5,12 @@ A sample contact us page form written with tailwind css
 Illustration from undraw.co by the amazing Katerina Limpitsouni
 -->
     <body class="bg-gray-800 text-gray-100 px-8 py-12">
+    <style>
+        label.error {
+            color: #dc3545;
+            font-size: 14px;
+        }
+    </style>
     <div class="text-center w-full">
         <svg class="text-gray-100 h-8 mx-auto" fill=currentColor viewBox="0 0 150 29" version="1.1"
              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -535,11 +541,11 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
                 </svg>
             </div>
         </div>
-        <form method="POST" action="/contactus">
+        <form id="regForm" method="POST" action="/contactus">
             @csrf
             <div class="">
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                         <ul>
                             @foreach($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -576,5 +582,31 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
         </form>
 
     </div>
+{{--    <script>--}}
+{{--        $(function() {--}}
+{{--            $("#regForm").validate({--}}
+{{--                rules: {--}}
+{{--                    fullname: {--}}
+{{--                        required: true,--}}
+{{--                        alpha: true,--}}
+{{--                    },--}}
+{{--                    email: {--}}
+{{--                        required: true,--}}
+{{--                        email: true--}}
+{{--                    },--}}
+{{--                    message: {--}}
+{{--                        required: true,--}}
+{{--                        maxlength: 255,--}}
+{{--                    },--}}
+{{--                },--}}
+
+{{--                messages: {--}}
+{{--                    fullname: " The Full Name filed is required. Please fill it",--}}
+{{--                    email: "The Email field is required. Please fill it",--}}
+{{--                    message: "The Message field is required. Please fill it"--}}
+{{--                }--}}
+{{--            })--}}
+{{--        });--}}
+{{--    </script>--}}
     </body>
 @endsection
