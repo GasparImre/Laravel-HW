@@ -567,6 +567,7 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
                 </div>
                 <div class="mt-8">
                     <button
+                        type="submit"
                         class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                         Send Message
                     </button>
