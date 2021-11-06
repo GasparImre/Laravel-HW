@@ -108,6 +108,7 @@
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </a>
+                            </form>
                     </li>
 
                     @else
@@ -231,7 +232,7 @@
                         <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
                             <h3 class="font-bold text-xl text-white text-bold mb-2">WWF</h3>
                             <li class="pt-3">
-                                <img src="{{url('/images/owl.jpg')}}" style="height: 300px;width: 250px;">
+                                <img src="{{url('/storage/photos/owl.jpg')}}" style="height: 300px;width: 250px;">
                             </li>
                         </ul>
                     </div>
