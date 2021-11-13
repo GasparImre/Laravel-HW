@@ -1,4 +1,5 @@
 @extends('welcome')
+@section("title") Welcome Visitor @endsection
 @section('content')
     <!-- component -->
     <div>

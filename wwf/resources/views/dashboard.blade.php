@@ -5,6 +5,7 @@
 {{--        </h2>--}}
 {{--    </x-slot>--}}
 @extends('welcome')
+@section("title") Welcome @endsection
 @section('content')
 
         <div class="bg-gray-100 lg:py-12 lg:flex lg:justify-center">

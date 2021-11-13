@@ -1,4 +1,5 @@
 @extends('welcome')
+@section("title") Contact Us @endsection
 @section('content')
     <!-- a lot of the lines are just svg text, actual html is simple
 A sample contact us page form written with tailwind css

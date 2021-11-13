@@ -1,4 +1,5 @@
 @extends('welcome')
+@section("title") Videos @endsection
 @section('content')
     <h2 class="text-4xl"> Videos about the WWF!</h2>
 
