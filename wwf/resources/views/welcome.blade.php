@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WWF</title>
+    <title>WWF - @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <style>
 
@@ -148,7 +148,7 @@
                                 <a href="{{route('contactus')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Contact us</a>
                             </li>
                             <li>
-                                <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">About us</a>
+                                <a href="{{route('articles.index')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</a>
                             </li>
                             <li>
                                 <a href="#" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Our Plans</a>
@@ -180,8 +180,8 @@
         </button>
         <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
 
-            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('photoupload')}}" >Photos</a></li>
-            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</li>
+            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('image-gallery')}}" >Photos</a></li>
+            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('/articles/create')}}">Articles</a> </li>
 
 
             <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 20 20">
