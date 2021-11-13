@@ -7,7 +7,7 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
     <body class="bg-gray-800 text-gray-100 px-8 py-12">
     <style>
         label.error {
-            color: #dc3545;
+            color: #ff0000;
             font-size: 14px;
         }
     </style>
@@ -541,7 +541,7 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
                 </svg>
             </div>
         </div>
-        <form id="regForm" method="POST" action="/contactus">
+        <form id="regForm" method="POST" action="/contactus" onchange="return validate()">
             @csrf
             <div class="">
                 @if ($errors->any())
@@ -553,22 +553,28 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
                         </ul>
                     </div>
                 @endif
-
+                    @if(Session::has("success"))
+                        <div class="alert alert-success">
+                            {{Session::get("success")}}
+                        </div>
+                    @elseif(Session::has("failed"))
+                        {{Session::get("failed")}}
+                    @endif
                 <div>
 
                     <span class="uppercase text-sm text-gray-600 font-bold">Full Name</span>
-                    <input name="fullname" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                    <input id="fullname" name="fullname" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                            type="text" placeholder="">
 
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
-                    <input name="email" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                    <input id="email" name="email" class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                            type="email">
                 </div>
                 <div class="mt-8">
                     <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
-                    <textarea name="message"
+                    <textarea id="message" name="message"
                         class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                 </div>
                 <div class="mt-8">
@@ -582,31 +588,33 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
         </form>
 
     </div>
-{{--    <script>--}}
-{{--        $(function() {--}}
-{{--            $("#regForm").validate({--}}
-{{--                rules: {--}}
-{{--                    fullname: {--}}
-{{--                        required: true,--}}
-{{--                        alpha: true,--}}
-{{--                    },--}}
-{{--                    email: {--}}
-{{--                        required: true,--}}
-{{--                        email: true--}}
-{{--                    },--}}
-{{--                    message: {--}}
-{{--                        required: true,--}}
-{{--                        maxlength: 255,--}}
-{{--                    },--}}
-{{--                },--}}
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+{{--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 
-{{--                messages: {--}}
-{{--                    fullname: " The Full Name filed is required. Please fill it",--}}
-{{--                    email: "The Email field is required. Please fill it",--}}
-{{--                    message: "The Message field is required. Please fill it"--}}
-{{--                }--}}
-{{--            })--}}
-{{--        });--}}
-{{--    </script>--}}
+    <script>
+        $(document).ready(function() {
+            $("#regForm").validate({
+                rules: {
+                    fullname: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 50,
+                    },
+                    message:{
+                        required: true,
+                        minlength: 5,
+                        maxlength: 255,
+                    },
+                    email: {
+                        required: true,
+                        email: true,
+                        minlength:5,
+                        maxlength: 50
+                    }
+            }})
+        });
+    </script>
     </body>
 @endsection
