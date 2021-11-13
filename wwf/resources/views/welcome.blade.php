@@ -178,28 +178,18 @@
       </svg>
     </span>
         </button>
-        <ul
-            class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute
-  transition duration-150 ease-in-out origin-top min-w-32"
-        >
+        <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
 
             <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('photoupload')}}" >Photos</a></li>
             <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</li>
 
 
-          <svg
-              class="fill-current h-4 w-4
-            transition duration-150 ease-in-out"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-          >
-            <path
-                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-            />
-          </svg>
+            <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+            </svg>
 
 
-                    </div>
+        </ul>
 
     <style>
         /* since nested groupes are not supported we have to use
