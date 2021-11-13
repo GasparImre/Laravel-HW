@@ -191,6 +191,7 @@
 
         </ul>
 
+
     <style>
         /* since nested groupes are not supported we have to use
            regular css for the nested dropdowns
@@ -224,7 +225,18 @@
                             <li class="pt-3">
                                 <img src="{{url('/storage/photos/owl.jpg')}}" style="height: 300px;width: 250px;">
                             </li>
+                            @if(Route::has('login'))
+                                @auth
+
+                                    <li>
+                                        <a href="{{route('users.index')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Users</a>
+                                    </li>
+
+                                @endauth
+                            @endif
                         </ul>
+
+
                     </div>
                 </div>
             </li>
