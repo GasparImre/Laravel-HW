@@ -67,7 +67,7 @@
                                             <input type="text" name="email" class="w-full bg-drabya-gray border-gray-500 appearance-none border p-4 font-light leading-tight focus:outline-none focus:shadow-outline" id="email" value="@if(!empty($user)) {{$user->email}} @endif">
                                             {!!$errors->first("email", "<div class='flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2'><span class='text-white max-w-xs '>:message </span></div>")!!}
                                         </div>
-                                       
+
                                     </div>
                                     <div class="flex items-center justify-between mb-5">
                                         <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-light py-2 px-6 rounded focus:outline-none focus:shadow-outline"> Update </button>
