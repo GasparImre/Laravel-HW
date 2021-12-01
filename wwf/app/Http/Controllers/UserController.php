@@ -24,7 +24,7 @@ class UserController extends Controller
             [
                 "name" => "required",
                 "email" => "required",
-//                "password" => "required"
+                "password" => "required"
             ]
         );
         $user = User::create($request->all());
@@ -49,7 +49,7 @@ class UserController extends Controller
         $request->validate([
             "name" => "required",
             "email" => "required",
-//            "password" => "required",
+            "password" => "required",
         ]);
         $user = $user->update($request->all());
         if(!is_null($user))
