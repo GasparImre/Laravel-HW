@@ -4,7 +4,8 @@
     <!-- a lot of the lines are just svg text, actual html is simple
 A sample contact us page form written with tailwind css
 Illustration from undraw.co by the amazing Katerina Limpitsouni
--->
+-->@if(Route::has('login'))
+       @auth
     <body class="bg-gray-800 text-gray-100 px-8 py-12">
     <style>
         label.error {
@@ -618,4 +619,8 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
         });
     </script>
     </body>
+    @endauth
+    @else
+    <p>Please login, to contact Us!</p>
+    @endif
 @endsection
