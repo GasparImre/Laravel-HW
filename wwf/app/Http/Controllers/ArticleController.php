@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -20,13 +21,21 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
+
         $request->validate(
             [
                 "title" => "required",
-                "description" => "required"
-            ]
+                "description" => "required",
+
+                            ]
+
         );
-        $article = Article::create($request->all());
+        $article=new Article();
+        $article->title = $request->input("title");
+        $article->description = $request->input("description");
+        $article->user_id = Auth::id();
+        $article->save();
+
         if(!is_null($article))
             return back()->with("success", "Success! Article created");
         else
@@ -63,5 +72,20 @@ class ArticleController extends Controller
             return back()->with("success", "Success! Article deleted");
         else
             return back()->with("failed", "Alert! Article not deleted");
+    }
+
+    public function manage(){
+        if (auth()->user()->hasRole('admin')) {
+            $articles = Article::latest()->paginate(25);
+        } else {
+//            $articles = Article::latest()->paginate(25);
+            $articles = Article::where('user_id', Auth::id())->paginate(25);
+            return view("manage_articles", compact('articles'));
+
+        }
+
+        return view("manage_articles", compact('articles'));
+
+//        return view("manage_articles", compact('articles'));
     }
 }
