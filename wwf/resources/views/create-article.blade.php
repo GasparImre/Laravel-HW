@@ -56,6 +56,11 @@
                             <h4 class="font-normal text-3xl text-grey-darkest leading-loose my-3 w-full"> Create Article </h4>
                         </div>
                         <div class="card-body">
+{{--                            <div class="mb-4">--}}
+{{--                                <label class="block text-md font-light mb-2" for="title"> Title </label>--}}
+{{--                                <input type="text" name="title" class="w-full bg-drabya-gray border-gray-500 appearance-none border p-4 font-light leading-tight focus:outline-none focus:shadow-outline" placeholder="Title" id="title" value="{{old('title')}}">--}}
+{{--                                {!!$errors->first("title", "<div class='flex items-center bg-red-500 border-l-4 border-red-700 py-2 px-3 shadow-md mb-2'><span class='text-white max-w-xs '>:message </span></div>")!!}--}}
+{{--                            </div>--}}
                             <div class="mb-4">
                                 <label class="block text-md font-light mb-2" for="title"> Title </label>
                                 <input type="text" name="title" class="w-full bg-drabya-gray border-gray-500 appearance-none border p-4 font-light leading-tight focus:outline-none focus:shadow-outline" placeholder="Title" id="title" value="{{old('title')}}">
