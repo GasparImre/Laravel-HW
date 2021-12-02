@@ -141,12 +141,17 @@
                             <li>
                                 <a href="{{route('play')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Videos</a>
                             </li>
+
                         </ul>
                         <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
                             <h3 class="font-bold text-xl text-white text-bold mb-2">About</h3>
+
+                            @can('user')
                             <li>
                                 <a href="{{route('contactus')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Contact us</a>
                             </li>
+                            @endcan
+
                             <li>
                                 <a href="{{route('articles.index')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</a>
                             </li>
@@ -181,7 +186,7 @@
         <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
 
             <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('image-gallery')}}" >Photos</a></li>
-            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('/articles/create')}}">Articles</a> </li>
+            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{route('articles.manage')}}">Articles</a> </li>
 
 
             <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 20 20">
@@ -225,21 +230,28 @@
                             <li class="pt-3">
                                 <img src="{{url('/storage/photos/owl.jpg')}}" style="height: 300px;width: 250px;">
                             </li>
-                            @if(Route::has('login'))
-                                @auth
-
+                           @can('superuser')
                                     <li>
                                         <a href="{{route('users.index')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Users</a>
                                     </li>
-
-                                @endauth
-                            @endif
+                               <li>
+                                   <a href="{{route('messages')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Messages</a>
+                               </li>
+                            @endcan
                         </ul>
 
 
                     </div>
                 </div>
             </li>
+        @auth
+            <li class="block p-3  text-black-800 ">
+                <?php
+                $name = Auth::user()->name;
+                print_r($name);
+                ?>
+            </li>
+            @endauth
         </ul>
     </div>
 </nav>
