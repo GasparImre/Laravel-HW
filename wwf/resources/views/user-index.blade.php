@@ -43,14 +43,14 @@
 			</span>
                         @endif
                     </div>
-                    @if(Route::has('login'))
-                        @auth
+{{--                    @if(Route::has('login'))--}}
+{{--                        @auth--}}
                             <div class="col-xl-6 text-right">
                                 <br>
                                 <a href="{{route('users.create')}}" class="bg-green-600 hover:bg-green-700 text-white font-light py-2 px-6 rounded focus:outline-none focus:shadow-outline"> Add New </a>
                             </div>
-                        @endauth
-                    @endif
+{{--                        @endauth--}}
+{{--                    @endif--}}
                 </div>
                 <table class="text-left w-full border-collapse">
                     <thead>
