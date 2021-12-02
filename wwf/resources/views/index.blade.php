@@ -54,31 +54,15 @@
     </div>
     <table class="text-left w-full border-collapse">
         <thead>
-        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"> Id </th>
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"> Title </th>
         <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"> Description </th>
-        <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"> Action </th>
         </thead>
         <tbody>
         @if(count($articles) > 0)
             @foreach($articles as $article)
                 <tr class="hover:bg-grey-lighter">
-                    <td class="py-4 px-6 border-b border-grey-light"> {{$article->id}} </td>
                     <td class="py-4 px-6 border-b border-grey-light"> {{$article->title}} </td>
                     <td class="py-4 px-6 border-b border-grey-light"> {{$article->description}} </td>
-                    <td class="py-4 px-6 border-b border-grey-light">
-                        @if(Route::has('login'))
-                            @auth
-                        <form action="{{route('articles.destroy', $article->id)}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <a href="{{route('articles.show', $article->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded" style="margin-left: 5px;"> View </a>
-                            <a href="{{route('articles.edit', $article->id)}}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 border border-yellow-500 rounded"style="margin-left: 5px;"> Edit </a>
-                            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"style="margin-left: 5px;"> Delete </button>
-                        </form>
-                            @endauth
-                        @endif
-                    </td>
                 </tr>
             @endforeach
         @endif
