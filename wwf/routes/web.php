@@ -43,7 +43,6 @@ Route::put('/articles/{article}',[ArticleController::class,'update'])->name('art
 Route::delete('/articles/{article}',[ArticleController::class,'destroy'])->name('articles.destroy');
 
 //Users
-//Route::group(['middleware'=> 'auth2'],function() {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
@@ -51,12 +50,13 @@ Route::delete('/articles/{article}',[ArticleController::class,'destroy'])->name(
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-//});
 
-Auth::routes();
+//messages
+Route::get('/messages',[\App\Http\Controllers\MessageController::class, 'index'])->name('messages');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+//manage articles and photos
+Route::get('/manage/articles',[ArticleController::class,'manage'])->name('articles.manage');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
