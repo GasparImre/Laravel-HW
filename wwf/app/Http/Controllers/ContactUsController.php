@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\ValidationException;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ContactUsController extends Controller
 {
@@ -23,6 +24,7 @@ class ContactUsController extends Controller
             'fullname'=>$request->fullname,
             'email'=>$request->email,
             'message'=>$request->message,
+            'created_at'=>Carbon::now(),
         ]);
         return view('feedback');
     }
