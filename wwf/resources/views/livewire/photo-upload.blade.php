@@ -3,7 +3,7 @@
     <br>
     @if(Route::has('login'))
         @auth
-    <form wire:submit.prevent="submit" >
+    <form id="uploadphoto"wire:submit.prevent="submit">
 
         <input type="file" wire:model="photo">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Title: </label>
@@ -11,11 +11,11 @@
         @error('photo') <span class="error">{{ $message }}</span> @enderror
         <br><br>
 
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Save Photo</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" id="saveButton" type="submit">Save Photo</button>
 
     </form>
         @else
-            <p>Please login to upload phpotos</p>
+            <p>Please login to upload photos</p>
         @endauth
     @endif
     <div class="container">
@@ -39,9 +39,6 @@
                                 {{pathinfo($file, PATHINFO_FILENAME)}}
                             </a>
                         </h3>
-                        <p
-                            class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
-                            Click on the card, to see the original size</p>
                     </div>
                 </article>
 
@@ -53,3 +50,4 @@
             </section>
     </div>
 </div>
+
