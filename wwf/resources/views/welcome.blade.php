@@ -146,11 +146,12 @@
                         <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
                             <h3 class="font-bold text-xl text-white text-bold mb-2">About</h3>
 
-                            @can('user')
+
+                            @auth
                             <li>
                                 <a href="{{route('contactus')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Contact us</a>
                             </li>
-                            @endcan
+                            @endauth
 
                             <li>
                                 <a href="{{route('articles.index')}}" class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white">Articles</a>
