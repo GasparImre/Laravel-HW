@@ -186,7 +186,7 @@
         </button>
         <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
 
-            <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{url('image-gallery')}}" >Photos</a></li>
+
             <li class="block p-3 hover:bg-blue-600 text-gray-300 hover:text-white"><a href="{{route('articles.manage')}}">Articles</a> </li>
 
 
