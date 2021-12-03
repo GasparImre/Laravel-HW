@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,7 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 //Photo
 Route::get('/image-gallery',[\App\Http\Controllers\ImageGalleryController::class, 'index'])->name('image-gallery');
 Route::post('/image-gallery',[\App\Http\Controllers\ImageGalleryController::class, 'upload'])->name('image-upload');
