@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -45,13 +47,18 @@ class UserController extends Controller
     }
 
     public function update(Request $request, User $user)
-    {
+    { $userprofile = User::where('email',$request->input("email"));
         $request->validate([
             "name" => "required",
             "email" => "required",
             "password" => "required",
         ]);
-        $user = $user->update($request->all());
+        $userprofile->update([
+           'name'=>$request->input("name"),
+            'email'=>$request->input("email"),
+            'password'=>Hash::make($request->input("password")),
+        ]);
+
         if(!is_null($user))
             return back()->with("success", "Success! User updated");
         else
