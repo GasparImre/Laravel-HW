@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Http\ValidationException;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\User;
 
 class ContactUsController extends Controller
 {
     public function create(){
-        return view('ContactUs');
+            return view('ContactUs');
+
     }
     public function store(Request $request){
         $validated = $request->validate([
